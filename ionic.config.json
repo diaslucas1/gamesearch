@@ -1,0 +1,8 @@
+{
+  "name": "gamesearch",
+  "app_id": "3fbfa111",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
