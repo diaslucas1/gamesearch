@@ -7,18 +7,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <ion-list>
-    <ion-item>
+    <ion-item *ngFor="let item of lista">
       <ion-thumbnail item-start>
-        <img src="https://steamcdn-a.akamaihd.net/steam/apps/252950/header.jpg?t=1522783996">
+        <img src="{{ item.appimg }}"/>
       </ion-thumbnail>
-      <h2>Rocket League</h2>
-      <p>Steam</p>
+      <h2>{{ item.app_name  }}</h2>
+      <p>{{ item.app_price }}</p>
       <button ion-button clear item-end> DESEJO ></button>
     </ion-item>
   </ion-list>
 
 </ion-content>
-
 
