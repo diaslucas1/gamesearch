@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { IGames } from '../../interfaces/IGames';
 
 import { GamesProvider } from '../../providers/games/games';
+import { ListPage } from '../list/list';
 
 @Component({
   selector: 'page-home',
@@ -19,6 +20,10 @@ export class HomePage {
     }, erro => {
       console.log("Erro: " + erro.message);
     });
+  }
+
+  abreDesejos(item){
+    this.navCtrl.push(ListPage, {dados:item});
   }
 
 }

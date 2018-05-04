@@ -1,24 +1,23 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Lista de Desejos</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="img/thumbnail-totoro.png">
-      </ion-thumbnail>
-      <h2>My Neighbor Totoro</h2>
-      <p>Hayao Miyazaki • 1988</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
-</ion-content>
+  
+    <ion-list>
+      <ion-item *ngFor="let item of lista">
+        <ion-thumbnail item-start>
+          <img src="{{ item.appimg }}"/>
+        </ion-thumbnail>
+        <h2>{{ item.app_name  }}</h2>
+        <p>{{ item.app_price }}</p>
+        <button ion-button (click)="abreDesejos(item)" item-end><ion-icon name="heart"></ion-icon></button>
+      </ion-item>
+    </ion-list>
+  
+  </ion-content>

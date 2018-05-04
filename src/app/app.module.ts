@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GamesProvider } from '../providers/games/games';
+import { DesejosProvider } from '../providers/desejos/desejos';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { GamesProvider } from '../providers/games/games';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GamesProvider
+    GamesProvider,
+    DesejosProvider
   ]
 })
 export class AppModule {}

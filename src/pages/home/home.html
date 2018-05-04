@@ -1,21 +1,22 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Game$earch</ion-title>
+    <ion-title><img src="../../assets/imgs/logosemfundo.png"></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+
   <ion-list>
     <ion-item *ngFor="let item of lista">
       <ion-thumbnail item-start>
-        <img src="{{ item.appimg }}"/>
+        <img src="{{ item.appimg }}">
       </ion-thumbnail>
       <h2>{{ item.app_name  }}</h2>
       <p>{{ item.app_price }}</p>
-      <button ion-button clear item-end> DESEJO ></button>
+      <button ion-button (click)="abreDesejos(item)" item-end><ion-icon name="heart"></ion-icon></button>
     </ion-item>
   </ion-list>
 
