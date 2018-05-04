@@ -25,6 +25,21 @@ export class ListPage {
         this.desejos = res;
       }
     })
-  
+  }
+
+  deletarTudo(){
+    this.desejos = [];
+    this.desejosProvider.setStorage('desejos',this.desejos);
+  }
+
+  deletarItem(game){
+    let novaLista = [];
+    for(let item of this.desejos){
+      if(item.app_name != game.app_name){
+        novaLista.push(item);
+      }
+    }
+    this.desejos = novaLista;
+    this.desejosProvider.setStorage('desejos',this.desejos);
   }
 }

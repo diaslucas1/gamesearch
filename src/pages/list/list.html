@@ -8,16 +8,33 @@
 </ion-header>
 
 <ion-content>
+
+    <ion-fab top right edge>
+        <button ion-fab mini color="danger" ><ion-icon name="trash"></ion-icon></button>
+        <ion-fab-list>
+          <button (click)="deletarTudo()"><ion-icon name="trash"></ion-icon>Deletar tudo</button>
+    
+        </ion-fab-list>
+      </ion-fab>
   
     <ion-list>
-      <ion-item *ngFor="let item of desejos">
+    <ion-item-sliding *ngFor="let item of desejos">
+      <ion-item>
         <ion-thumbnail item-start>
           <img src="{{ item.appimg }}"/>
         </ion-thumbnail>
         <h2>{{ item.app_name  }}</h2>
         <p>{{ item.app_price }}</p>
-      
       </ion-item>
+
+      <ion-item-options side="right">
+        <button (click)="deletarItem(item)" ion-button color="danger">
+          <ion-icon name="trash"></ion-icon>
+          Remover
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
     </ion-list>
   
   </ion-content>
