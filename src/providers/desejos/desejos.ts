@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { Storage } from '@ionic/storage';
+
 /*
   Generated class for the DesejosProvider provider.
 
@@ -10,8 +12,16 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DesejosProvider {
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private storage: Storage) {
     console.log('Hello DesejosProvider Provider');
+  }
+  
+  setStorage(chave,valor){
+    this.storage.set(chave, valor);
+  }
+
+  getStorage(chave){
+    return this.storage.get(chave);
   }
 
 }

@@ -13,16 +13,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { GamesProvider } from '../providers/games/games';
 import { DesejosProvider } from '../providers/desejos/desejos';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
