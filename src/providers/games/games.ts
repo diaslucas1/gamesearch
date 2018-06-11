@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { IGames } from '../../interfaces/IGames';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /*
   Generated class for the GamesProvider provider.
@@ -12,12 +13,17 @@ import { IGames } from '../../interfaces/IGames';
 @Injectable()
 export class GamesProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello GamesProvider Provider');
+  items: string[];
+
+  constructor(private db:AngularFireDatabase) {
+    
   }
 
-  allTeste(){
-    return this.http.get<IGames>('http://localhost:3000/games');
+  allTeste(): Promise<any>{
+    return this.db.database.ref("games").once("value")
+      .then(function(snapshot) {        
+      return snapshot.val();             
+    });   
   }
 
 }

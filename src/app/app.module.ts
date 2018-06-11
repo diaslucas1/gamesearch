@@ -15,6 +15,9 @@ import { DesejosProvider } from '../providers/desejos/desejos';
 
 import { IonicStorageModule } from '@ionic/storage';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,7 +28,16 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCJOOZK9PqXuPcPjERmXbGKAHtZ74-jWhY",
+      authDomain: "teste-f97b5.firebaseapp.com",
+      databaseURL: "https://teste-f97b5.firebaseio.com",
+      projectId: "teste-f97b5",
+      storageBucket: "teste-f97b5.appspot.com",
+      messagingSenderId: "870265824740"
+    }),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
